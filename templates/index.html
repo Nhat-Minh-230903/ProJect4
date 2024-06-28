@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Data Table</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>PlaceID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                    <th>Amenities</th>
+                    <th>ContactInfo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item.PlaceID }}</td>
+                    <td><a href="/getField?placeid={{ item.PlaceID }}" target="_self">{{ item.Name }}</a></td>
+                    <td>{{ item.Location }}</td>
+                    <td>{{ item.Description }}</td>
+                    <td>{{ item.Amenities }}</td>
+                    <td>{{ item.ContactInfo }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
