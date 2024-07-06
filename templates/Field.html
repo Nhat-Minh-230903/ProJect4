@@ -13,10 +13,10 @@
             <thead>
                 <tr>
                     <th>FieldID</th>
-                    <th>PlaceID</th>
-                    <th>FieldType</th>
-                    <th>Price</th>
-                    <th>Availability</th>
+                    <th>FieldName</th>
+                    <th>FieldTypeID</th>
+                    <th>Description</th>
+                   
                     
                 </tr>
             </thead>
@@ -24,10 +24,10 @@
                 {% for item in data %}
                 <tr>      
                     <td>{{ item.FieldID }}</td>
-                    <td>{{ item.PlaceID }}</td>
-                    <td>{{ item.FieldType }}</td>
-                    <td>{{ item.Price }}</td>
-                    <td>{{ item.Availability }}</td>
+                    <td>{{ item.FieldName }}</td>
+                    <td>{{ item.FieldType}}</td>
+                    <td>{{ item.Description }}</td>
+                    
                 </tr>
                 {% endfor %}
             </tbody>

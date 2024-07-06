@@ -9,14 +9,27 @@
 <body>
     <div class="container mt-5">
         <h2 class="mb-4">Data Table</h2>
+        
+        <!-- Hiển thị tên người dùng nếu có -->
+        {% if username %}
+            <h3>Username: {{ username }}</h3>
+            <div>
+                <a href="/logout" class="btn btn-danger">Đăng xuất</a>
+            </div>
+        {% else %}
+            <div>
+                <a href="/login" class="btn btn-primary">Đăng nhập</a>
+            </div>
+        {% endif %}
+        
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>PlaceID</th>
                     <th>Name</th>
-                    <th>Location</th>
-                    <th>Description</th>
-                    <th>Amenities</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
                     <th>ContactInfo</th>
                 </tr>
             </thead>
@@ -25,10 +38,11 @@
                 <tr>
                     <td>{{ item.PlaceID }}</td>
                     <td><a href="/getField?placeid={{ item.PlaceID }}" target="_self">{{ item.Name }}</a></td>
-                    <td>{{ item.Location }}</td>
-                    <td>{{ item.Description }}</td>
-                    <td>{{ item.Amenities }}</td>
-                    <td>{{ item.ContactInfo }}</td>
+                    <td>{{ item.Address }}</td>
+                    <td>{{ item.City }}</td>
+                    <td>{{ item.State }}</td>
+                    <td>{{ item.PhoneNumber }}</td>
+                    <td>{{ item.Login }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
